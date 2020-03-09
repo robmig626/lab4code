@@ -2,7 +2,7 @@ parameter idle = 3'b000;
 parameter write_to_mem = 3'b001;
 parameter update_address = 3'b100;
 
-module FSM_mem_w_init(rst,start, finish, clk, wr_en, mem_addr, wr_data);
+module FSM_mem_w_init(rst, start, finish, clk, wr_en, mem_addr, wr_data);
 	input clk, start, rst;
 	
 	output wr_en, finish;
