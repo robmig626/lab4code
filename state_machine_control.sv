@@ -83,7 +83,7 @@ always_comb
             idle: // wait until the start bit has been set, after starting move to the start state machine 1 state
              begin
                  if(start)
-                    state <= start_init;    
+                    state <= start_init_FSM;    
              end
             
             start_init_FSM: state <= wait_for_finish_init; // start state machine 1, move to the wait for state machine 1 to finish state
@@ -91,7 +91,7 @@ always_comb
             wait_for_finish_init: // wait until the state machine 1 finished bit is high, then move to the start state machine 2 state
              begin
                  if(finish_init)
-                    state <= start_shuffle; 
+                    state <= start_shuffle_FSM; 
              end
 
             start_shuffle_FSM: state <= wait_for_finish_shuffle; // start state machine 2, move to wait for state machine 2 to finish state

@@ -46,7 +46,66 @@ initial
  initial 
   begin
      reset = 1'b1;
+     start = 1'b0;
+     finish_init = 1'b0;
+     finish_shuffle = 1'b0;
+     write_enable_init = 1'b0;
+     write_enable_shuffle = 1'b0;
+     address_init = 8'b0;
+     address_shuffle = 8'b0;
+     write_data_init = 8'hFF;
+     write_data_shuffle = 8'hAA;
+    
+     #10;
+    
+     reset = 1'b0;
      start = 1'b1;
 
+     #50;
+
+     start = 1'b0;
+
+     #20;
+
+     address_init = 8'd1;
+
+     #10;
+
+     address_init = 8'd2;
+
+     #10;
+
+     address_init = 8'd3;
+
+     #10;
+
+     finish_init = 1'b1;
+
+     #10;
+
+     finish_init = 1'b0;
+
+     #10;
+
+     address_shuffle = 8'd9;
+
+     #10;
+
+     address_shuffle = 8'd8;
+
+     #10;
+
+     address_shuffle = 8'd7;
+
+     #10;
+
+     finish_shuffle = 1'b1;
+
+     #10;
+
+     finish_shuffle = 1'b0;
+
   end
+
+endmodule
 
