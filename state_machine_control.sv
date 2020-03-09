@@ -10,12 +10,13 @@ module state_machine_control
     finish_shuffle,
     write_enable_init,
     write_enable_shuffle,
+    write_enable_out,
     address_init,
     address_shuffle,
     address_out,
     write_data_init,
     write_data_shuffle,
-    write_enable_out
+    write_data_out
 );
 
 input wire clk, reset, start, finish;
@@ -33,37 +34,39 @@ logic [11:0] state;
 
 wire init_select, shuffle_select;
 
-parameter idle                      = 12'b0000_00000000;
-parameter start_init                = 12'b0001_00000011;
-parameter wait_for_finish_init      = 12'b0010_00000010;
-parameter start_shuffle             = 12'b0011_00001100;
-parameter wait_for_finish_shuffle   = 12'b0100_00001000;
-parameter give_finish_bit           = 12'b0101_10000000;
+parameter idle                      = 12'b0000_00000000; //wait for the start bit
+parameter start_init_FSM            = 12'b0001_00000011; //send the start bit to the first state machine
+parameter wait_for_finish_init      = 12'b0010_00000010; //wait until the first state machine is finished
+parameter start_shuffle_FSM         = 12'b0011_00001100; //after the first state machine has finished send the start bit to the second state machine
+parameter wait_for_finish_shuffle   = 12'b0100_00001000; //wait for the second state machine to finish
+parameter give_finish_bit           = 12'b0101_10000000; //after all the state machines have finished send the finish bit
 
-assign start_init                   = state[0];
-assign init_select                  = state[1];
-assign start_shuffle                = state[2];
-assign shuffle_select               = state[3];
-assign finish                       = state[7];
+assign start_init                   = state[0]; //start state machine 1 bit
+assign init_select                  = state[1]; //select the parameters for state machine 1
+assign start_shuffle                = state[2]; //start state machine 2 bit
+assign shuffle_select               = state[3]; //select the parameters for state machine 2
+assign finish                       = state[7]; //finish bit
 
+
+// selects the write_enable, address, and data that is sent to the memory based on what state machine is currently running
 always_comb
  begin
      case({init_select, shuffle_select})
         2'b10:
          begin
-             write_enable_out = write_data_init;
+             write_enable_out = write_data_init; //select the parametrs for state machine 1
              address_out = address_init;
              write_data_out = write_data_init;
          end
          2'b01:
          begin
-             write_enable_out = write_data_shuffle;
+             write_enable_out = write_data_shuffle; //select the parameters for state machine 2
              address_out = address_shuffle;
              write_data_out = write_data_shuffle;
          end
          default:
           begin
-             write_enable_out = 1'b0;
+             write_enable_out = 1'b0; //if no state machine is running then set write_enable, address and write_data to 0
              address_out = 8'b0;
              write_data_out = 8'b0;
           end
@@ -73,33 +76,33 @@ always_comb
  always_ff @(posedge clk, posedge reset)
   begin
      if(reset)
-         state <= idle;
+         state <= idle; //set state to idle if reset
      else
       begin
          case(state)
-            idle:
+            idle: // wait until the start bit has been set, after starting move to the start state machine 1 state
              begin
                  if(start)
-                    state <= start_init;
+                    state <= start_init;    
              end
             
-            start_init: state <= wait_for_finish_init;
+            start_init_FSM: state <= wait_for_finish_init; // start state machine 1, move to the wait for state machine 1 to finish state
 
-            wait_for_finish_init:
+            wait_for_finish_init: // wait until the state machine 1 finished bit is high, then move to the start state machine 2 state
              begin
                  if(finish_init)
-                    state <= start_shuffle;
+                    state <= start_shuffle; 
              end
 
-            start_shuffle: state <= wait_for_finish_shuffle;
+            start_shuffle_FSM: state <= wait_for_finish_shuffle; // start state machine 2, move to wait for state machine 2 to finish state
 
-            wait_for_finish_shuffle:
+            wait_for_finish_shuffle: // wait until the state machine 2 finished bit is high, then move to the finished state 
              begin
                  if(finish_shuffle)
                     state <= give_finish_bit;
              end
 
-            give_finish_bit: state <= idle;
+            give_finish_bit: state <= idle; // set the finish bit high, then set the state back to idle
          endcase
       end
   end
