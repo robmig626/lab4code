@@ -1,0 +1,9 @@
+module FSM_shuffle_mem(start, finish, clk, s_q, secret_key, s_addr_i, s_addr_j);
+	//state encoding
+	parameter idle
+	parameter read_s_i_addr
+	parameter read_secret_key
+	parameter sum_j
+	parameter swap_si_sj
+	parameter finish
+endmodule 
