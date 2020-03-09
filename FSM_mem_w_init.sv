@@ -1,8 +1,9 @@
 parameter idle = 3'b000;
 parameter write_to_mem = 3'b001;
-parameter update_address = 3'b100;
+parameter update_address = 3'b010;
+parameter finish_init = 3'b100;
 
-module FSM_mem_w_init(rst, start, finish, clk, wr_en, mem_addr, wr_data);
+module FSM_mem_w_init(rst,start, finish, clk, wr_en, mem_addr, wr_data);
 	input clk, start, rst;
 	
 	output wr_en, finish;
@@ -28,7 +29,13 @@ module FSM_mem_w_init(rst, start, finish, clk, wr_en, mem_addr, wr_data);
 
 			write_to_mem: state <= update_address;
 			
-			update_address: begin state <= idle; address<= address+1; end
+			update_address:  if (address == 8'hFF) state<=finish_init; 
+										 else begin 
+										 address<= address+1; 
+										 state<=write_to_mem;
+										 end
+								 
+			finish_init: state<=idle;
 		endcase
 	end
 endmodule 

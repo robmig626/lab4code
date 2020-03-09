@@ -19,6 +19,7 @@ module FSM_mem_w_init_testbench ();
 		rst = 1'b1;
 		start = 1'b1;
 		#10;
+		start = 1'b0;
 		rst = 1'b0;
 		#300;
 	end
