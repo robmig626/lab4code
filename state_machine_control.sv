@@ -54,13 +54,13 @@ always_comb
      case({init_select, shuffle_select})
         2'b10:
          begin
-             write_enable_out = write_data_init; //select the parametrs for state machine 1
+             write_enable_out = write_enable_init; //select the parametrs for state machine 1
              address_out = address_init;
              write_data_out = write_data_init;
          end
          2'b01:
          begin
-             write_enable_out = write_data_shuffle; //select the parameters for state machine 2
+             write_enable_out = write_enable_shuffle; //select the parameters for state machine 2
              address_out = address_shuffle;
              write_data_out = write_data_shuffle;
          end
