@@ -19,12 +19,13 @@ module state_machine_control
     write_data_out
 );
 
-input wire clk, reset, start, finish;
+input wire clk, reset, start;
 input wire finish_init, finish_shuffle;
 input wire write_enable_init, write_enable_shuffle;
 input wire [7:0] address_init, address_shuffle;
 input wire [7:0] write_data_init, write_data_shuffle;
 
+output wire finish;
 output wire start_init, start_shuffle;
 output logic write_enable_out;
 output logic [7:0] address_out;

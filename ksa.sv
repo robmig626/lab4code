@@ -98,14 +98,14 @@ module ksa (input CLOCK_50,
         .wren(write_enable),
         .q(q)
     );
-
+    /*
     encrypted_message emem
     (
         .address(address_m), 
         .clock(clk), 
         .q(q_m)
     );
-	
+	*//*
 	 decrypted_message dmem
      (
          .address(address_d), 
@@ -114,7 +114,7 @@ module ksa (input CLOCK_50,
          .wren(wren_d), 
          .q(q_d)
     );
-
+    */
 endmodule 
 
 
