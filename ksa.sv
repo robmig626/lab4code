@@ -31,7 +31,9 @@ module ksa (input CLOCK_50,
 
     // shuffle state machine
     wire start_shuffle, finish_shuffle;
+	 wire write_enable_shuffle;
     wire read_s, read_key, sum_en, wr_en_si, addr_to_sj, wr_en_sj, swap_en, inc_en;
+	 wire [7:0] address_shuffle, write_data_shuffle;
 
     assign clk = CLOCK_50;
     assign switches = SW;
@@ -40,6 +42,7 @@ module ksa (input CLOCK_50,
 
     SevenSegmentDisplayDecoder mod (.nIn(nIn), .ssOut(ssOut));
 
+    // initializes the values in memory
     FSM_mem_w_init FSM1
     (
         .clk(clk),
@@ -51,6 +54,7 @@ module ksa (input CLOCK_50,
         .wr_data(write_data_init)
     );
 
+    // controls the memory shuffling algorithm
     FSM_shuffle_mem FSM2
     (
         .start(start_shuffle),
@@ -67,8 +71,25 @@ module ksa (input CLOCK_50,
         .inc_en(inc_en)
     );
 
-    //add some stuff to control write_enable, address, and write_data based on flags
+    // controls the address, write_data and write enable of shuffler
+	flag_shuffle_op FSM2_2_control
+	(
+        .curr_addr(address_shuffle), // address we want to write to or read from
+        .mem_s_read_data(q), // data coming from memory
+        .secret_key({10'b0,switches}),
+        .write_data(write_data_shuffle), //data we want to write to memory
+        .wr_en(write_enable_shuffle),
+        .read_s(read_s),
+        .read_key(read_key),
+        .sum_en(sum_en),
+        .wr_en_si(wr_en_si),
+        .addr_to_sj(addr_to_sj),
+        .wr_en_sj(wr_en_sj),
+        .swap_en(swap_en),
+        .inc_en(inc_en) 
+	);
 
+    // controls which state machine is accessing the memory
     state_machine_control enableFSMs
     (
         .clk(clk),
