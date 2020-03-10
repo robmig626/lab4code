@@ -1,17 +1,31 @@
-C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem_testbench.sv {1 {vlog -work work -sv -stats=none C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem_testbench.sv
-Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
--- Compiling module FSM_shuffle_mem_testbench
-
-Top level modules:
-	FSM_shuffle_mem_testbench
-
-} {} {}} C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv {1 {vlog -work work -sv -stats=none C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv
+C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv {1 {vlog -work work -sv -stats=none C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv
 Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
 -- Compiling package FSM_mem_w_init_sv_unit
 -- Compiling module FSM_mem_w_init
 
 Top level modules:
 	FSM_mem_w_init
+
+} {} {}} C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem_testbench.sv {1 {vlog -work work -sv -stats=none C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem_testbench.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module FSM_shuffle_mem_testbench
+
+Top level modules:
+	FSM_shuffle_mem_testbench
+
+} {} {}} C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/flag_shuffle_op.sv {1 {vlog -work work -sv -stats=none C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/flag_shuffle_op.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module flag_shuffle_op
+
+Top level modules:
+	flag_shuffle_op
+
+} {} {}} C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_mem_w_init_testbench.sv {1 {vlog -work work -sv -stats=none C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_mem_w_init_testbench.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module FSM_mem_w_init_testbench
+
+Top level modules:
+	FSM_mem_w_init_testbench
 
 } {} {}} C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem.sv
 Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014

@@ -1,0 +1,22 @@
+module flag_shuffle_op(
+ curr_addr,
+ mem_s_read_data,
+ secret_key,
+ 
+ write_sj_addr,
+ write_si_addr,
+ write_sj_data,
+ write_si_data,
+
+ read_s,
+ read_key,
+ sum_en,
+ wr_en_si,
+ addr_to_sj,
+ wr_en_sj,
+ swap_en,
+ inc_en);
+	
+	input read_s, read_key, sum_en, wr_en_si, addr_to_sj, wr_en_sj, swap_en, inc_en;	
+	output  write_sj_addr, write_si_addr, write_sj_data, write_si_data;
+endmodule 

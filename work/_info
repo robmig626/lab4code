@@ -8,10 +8,33 @@ z2
 !i10f 100
 cModel Technology
 dC:/altera/14.1
-vFSM_mem_w_init
+vflag_shuffle_op
 Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z1 !s110 1583803096
+!i10b 1
+!s100 8[EJ2j3@@^^m]WXSmm;lT2
+I28>@0THS9F5hH4WXJi`zG2
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 flag_shuffle_op_sv_unit
+S1
+Z3 dC:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code
+w1583802287
+8C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/flag_shuffle_op.sv
+FC:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/flag_shuffle_op.sv
+L0 1
+Z4 OV;L;10.3c;59
+r1
+!s85 0
+31
+!s108 1583803096.821000
+!s107 C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/flag_shuffle_op.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/flag_shuffle_op.sv|
+!i113 1
+Z5 o-work work -sv
+vFSM_mem_w_init
+R0
 DXx4 work 22 FSM_mem_w_init_sv_unit 0 22 3I1G6Mjl>mO8bOlM5=n=52
-Z1 V`JN@9S9cnhjKRR_L]QIcM3
+R2
 r1
 !s85 0
 31
@@ -20,17 +43,17 @@ r1
 I]7_I<Q67cU4J9>EnCb]IC3
 !s105 FSM_mem_w_init_sv_unit
 S1
-Z2 dC:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code
-Z3 w1583788531
-Z4 8C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv
-Z5 FC:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv
+R3
+Z6 w1583788531
+Z7 8C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv
+Z8 FC:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv
 L0 6
-Z6 OV;L;10.3c;59
-Z7 !s108 1583788558.257000
-Z8 !s107 C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv|
-Z9 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv|
+R4
+Z9 !s108 1583803096.482000
+Z10 !s107 C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv|
+Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/Lab4_template_de1soc/template_de1soc/lab4code/FSM_mem_w_init.sv|
 !i113 1
-Z10 o-work work -sv
+R5
 n@f@s@m_mem_w_init
 XFSM_mem_w_init_sv_unit
 R0
@@ -43,87 +66,87 @@ r1
 I3I1G6Mjl>mO8bOlM5=n=52
 !i103 1
 S1
-R2
 R3
-R4
-R5
-L0 1
 R6
 R7
 R8
+L0 1
+R4
 R9
-!i113 1
 R10
+R11
+!i113 1
+R5
 n@f@s@m_mem_w_init_sv_unit
 vFSM_mem_w_init_testbench
 R0
-Z11 !s110 1583788558
-!i10b 1
-!s100 iYlY[<<6ZH88i]oXB1KO53
-IQT0NB7CnD:zRJh?[2f;Un3
 R1
+!i10b 1
+!s100 VS58LPME=o1WP]:eQ16f^3
+I;_4YISkJ8lR[coo0gFT`U3
+R2
 !s105 FSM_mem_w_init_testbench_sv_unit
 S1
-R2
-w1583698741
+R3
+w1583788050
 8C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_mem_w_init_testbench.sv
 FC:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_mem_w_init_testbench.sv
 L0 1
-R6
+R4
 r1
 !s85 0
 31
-!s108 1583788558.176000
+!s108 1583803096.182000
 !s107 C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_mem_w_init_testbench.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_mem_w_init_testbench.sv|
 !i113 1
-R10
+R5
 n@f@s@m_mem_w_init_testbench
 vFSM_shuffle_mem
 R0
-R11
+Z12 !s110 1583803095
 !i10b 1
 !s100 ?IcEnQdb:aM@>l78PJQ;V3
 I[gYRch@SB@cb]^T4cXAg83
-R1
+R2
 !s105 FSM_shuffle_mem_sv_unit
 S1
-R2
-Z12 w1583784182
+R3
+Z13 w1583784182
 8C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem.sv
 FC:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem.sv
 L0 1
-R6
+R4
 r1
 !s85 0
 31
-!s108 1583788558.016000
+!s108 1583803095.582000
 !s107 C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem.sv|
 !i113 1
-R10
+R5
 n@f@s@m_shuffle_mem
 vFSM_shuffle_mem_testbench
 R0
-R11
+R12
 !i10b 1
 !s100 c1Ne6k=GYFeJB9D^64oX63
 I[7jaDZ^K__]?ohP5EZgX[1
-R1
+R2
 !s105 FSM_shuffle_mem_testbench_sv_unit
 S1
-R2
-R12
+R3
+R13
 8C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem_testbench.sv
 FC:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem_testbench.sv
 L0 1
-R6
+R4
 r1
 !s85 0
 31
-!s108 1583788558.086000
+!s108 1583803095.862000
 !s107 C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem_testbench.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/USER/Desktop/UBC/Y3/CPEN311/lab4/lab4/lab4code/FSM_shuffle_mem_testbench.sv|
 !i113 1
-R10
+R5
 n@f@s@m_shuffle_mem_testbench
