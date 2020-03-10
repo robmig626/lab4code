@@ -44,7 +44,7 @@ module flag_shuffle_op(
 	
 	always_ff@(posedge clk/*posedge read_s, posedge swap_en, posedge sum_en, posedge wr_en_si, posedge addr_to_sj, posedge wr_en_sj, posedge inc_en*/)
 	 begin
-		case({read_s, read_key, sum_en,wr_en_si,addr_to_sj,wr_en_sj,inc_en})
+		case({read_s, swap_en, sum_en,wr_en_si,addr_to_sj,wr_en_sj,inc_en})
 			7'b1000000: // read_s memory at address si
 			 begin
 			 	curr_addr <= si_addr;
