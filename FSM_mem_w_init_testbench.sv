@@ -16,11 +16,17 @@ module FSM_mem_w_init_testbench ();
 	end
 	
 	initial begin
+		rst = 1'b0;
+		start = 1'b0;
+		#10;
 		rst = 1'b1;
-		start = 1'b1;
 		#10;
 		start = 1'b0;
 		rst = 1'b0;
+		#10;
+		start = 1'b1;
+		#20;
+		start = 1'b0;
 		#300;
 	end
 endmodule 

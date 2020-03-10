@@ -76,7 +76,7 @@ module ksa (input CLOCK_50,
 	(
         .curr_addr(address_shuffle), // address we want to write to or read from
         .mem_s_read_data(q), // data coming from memory
-        .secret_key({10'b0,switches}),
+        .secret_key({14'b0,switches}),
         .write_data(write_data_shuffle), //data we want to write to memory
         .wr_en(write_enable_shuffle),
         .read_s(read_s),

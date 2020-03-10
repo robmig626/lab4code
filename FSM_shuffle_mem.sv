@@ -26,6 +26,7 @@ module FSM_shuffle_mem(start,
 	output fin, sum_en, swap_en, wr_en_si, addr_to_sj, wr_en_sj, inc_en, read_key, read_s;
 	
 	reg [8:0] state;
+	reg [7:0] counter = 8'h00;
 	// the numbers are the order of the steps
 	assign inc_en = state[6];   //8 this increments the address i
 	assign fin = state[5];      //9 this is finish signal
@@ -59,7 +60,11 @@ module FSM_shuffle_mem(start,
 			
 			shuffle_wr_en_sj: state<=inc_addr_i; //writes to addr sj the previous si data
 			
-			inc_addr_i: state<=finish;// increments i by 1
+			inc_addr_i: if (counter == 8'hFF) state<=finish; // increments i by 1
+									else begin
+									counter<=counter+1;
+									state<=read_memories;
+									end
 			
 			finish: state<=idle; //done
 		endcase
