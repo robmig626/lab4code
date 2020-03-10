@@ -1,4 +1,5 @@
 module flag_shuffle_op(
+ clk,
  curr_addr, // address we want to write to or read from
  mem_s_read_data, // data coming from memory
  secret_key,
@@ -15,7 +16,7 @@ module flag_shuffle_op(
  swap_en,
  inc_en);
 	
-	input read_s, read_key, sum_en, wr_en_si, addr_to_sj, wr_en_sj, swap_en, inc_en;
+	input read_s, read_key, sum_en, wr_en_si, addr_to_sj, wr_en_sj, swap_en, inc_en, clk;
 	input [7:0] mem_s_read_data;
 	input [23:0] secret_key;
 	
@@ -25,7 +26,7 @@ module flag_shuffle_op(
 	reg[7:0] si_addr; // initialized at 0
 	reg[7:0] sj_addr; // initialized at 0
 	reg[7:0] read_si_data;
-    reg[7:0] read_sj_data;
+   reg[7:0] read_sj_data;
 	reg[7:0] keyMod1,keyMod2,keyMod3;
 	reg[7:0] key_mod_j;
 	
@@ -41,9 +42,9 @@ module flag_shuffle_op(
 		endcase
 	end
 	
-	always_ff@(posedge read_s, posedge swap_en, posedge sum_en, posedge wr_en_si, posedge addr_to_sj, posedge wr_en_sj, posedge inc_en)
+	always_ff@(posedge clk/*posedge read_s, posedge swap_en, posedge sum_en, posedge wr_en_si, posedge addr_to_sj, posedge wr_en_sj, posedge inc_en*/)
 	 begin
-		case({sum_en,wr_en_si,addr_to_sj,wr_en_sj,inc_en})
+		case({read_s, read_key, sum_en,wr_en_si,addr_to_sj,wr_en_sj,inc_en})
 			7'b1000000: // read_s memory at address si
 			 begin
 			 	curr_addr <= si_addr;
